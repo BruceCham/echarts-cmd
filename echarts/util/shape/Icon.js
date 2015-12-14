@@ -32,7 +32,7 @@
    }
  */
 define(function (require, exports, module) {
-    var zrUtil = require('zrender/tool/util');
+    var zrUtil = require('../../zrender/tool/util');
     
     function _iconMark(ctx, style) {
         var x = style.x;
@@ -441,7 +441,7 @@ define(function (require, exports, module) {
     }
     
     function _iconStar(ctx, style) {
-        var StarShape = require('zrender/shape/Star');
+        var StarShape = require('../../zrender/shape/Star');
         var width = style.width / 2;
         var height = style.height / 2;
         StarShape.prototype.buildPath(ctx, {
@@ -453,7 +453,7 @@ define(function (require, exports, module) {
     }
     
     function _iconHeart(ctx, style) {
-        var HeartShape = require('zrender/shape/Heart');
+        var HeartShape = require('../../zrender/shape/Heart');
         HeartShape.prototype.buildPath(ctx, {
             x : style.x + style.width / 2,
             y : style.y + style.height * 0.2,
@@ -463,7 +463,7 @@ define(function (require, exports, module) {
     }
     
     function _iconDroplet(ctx, style) {
-        var DropletShape = require('zrender/shape/Droplet');
+        var DropletShape = require('../../zrender/shape/Droplet');
         DropletShape.prototype.buildPath(ctx, {
             x : style.x + style.width * 0.5,
             y : style.y + style.height * 0.5,
@@ -490,7 +490,7 @@ define(function (require, exports, module) {
     }
     
     function _iconImage(ctx, style, refreshNextFrame) {
-        var ImageShape = require('zrender/shape/Image');
+        var ImageShape = require('../../zrender/shape/Image');
         this._imageShape = this._imageShape || new ImageShape({
             style: {}
         });
@@ -500,7 +500,7 @@ define(function (require, exports, module) {
         this._imageShape.brush(ctx, false, refreshNextFrame);
     }
     
-    var Base = require('zrender/shape/Base');
+    var Base = require('../../zrender/shape/Base');
     
     function Icon(options) {
         Base.call(this, options);
@@ -543,7 +543,7 @@ define(function (require, exports, module) {
             style = style || {};
             var iconType = style.iconType || this.style.iconType;
             if (iconType === 'image') {
-                var ImageShape = require('zrender/shape/Image');
+                var ImageShape = require('../../zrender/shape/Image');
                 ImageShape.prototype.brush.call(this, ctx, isHighlight, refreshNextFrame);
 
             } else {

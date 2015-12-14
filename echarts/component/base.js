@@ -10,7 +10,7 @@ define(function (require, exports, module) {
     var ecData = require('../util/ecData');
     var ecQuery = require('../util/ecQuery');
     var number = require('../util/number');
-    var zrUtil = require('zrender/tool/util');
+    var zrUtil = require('../zrender/tool/util');
     
     function Base(ecTheme, messageCenter, zr, option, myChart){
         this.ecTheme = ecTheme;
@@ -53,7 +53,7 @@ define(function (require, exports, module) {
      * 基类方法
      */
     Base.prototype = {
-        canvasSupported: require('zrender/tool/env').canvasSupported,
+        canvasSupported: require('../zrender/tool/env').canvasSupported,
         _getZ : function(zWhat) {
             if (this[zWhat] != null) {
                 return this[zWhat];

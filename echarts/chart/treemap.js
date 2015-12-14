@@ -8,11 +8,11 @@
 define(function (require, exports, module) {
     var ChartBase = require('./base');
     // 图形依赖
-    var toolArea = require('zrender/tool/area');
+    var toolArea = require('../zrender/tool/area');
     // 图形依赖
-    var RectangleShape = require('zrender/shape/Rectangle');
-    var TextShape = require('zrender/shape/Text');
-    var LineShape = require('zrender/shape/Line');
+    var RectangleShape = require('../zrender/shape/Rectangle');
+    var TextShape = require('../zrender/shape/Text');
+    var LineShape = require('../zrender/shape/Line');
     // 布局依赖
     var TreeMapLayout = require('../layout/TreeMap');
     // 数据依赖
@@ -58,10 +58,10 @@ define(function (require, exports, module) {
     };
 
     var ecData = require('../util/ecData');
-    var zrConfig = require('zrender/config');
-    var zrEvent = require('zrender/tool/event');
-    var zrUtil = require('zrender/tool/util');
-    var zrColor = require('zrender/tool/color');
+    var zrConfig = require('../zrender/config');
+    var zrEvent = require('../zrender/tool/event');
+    var zrUtil = require('../zrender/tool/util');
+    var zrColor = require('../zrender/tool/color');
 
     /**
      * 构造函数

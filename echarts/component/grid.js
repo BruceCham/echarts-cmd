@@ -9,7 +9,7 @@ define(function (require, exports, module) {
     var Base = require('./base');
     
     // 图形依赖
-    var RectangleShape = require('zrender/shape/Rectangle');
+    var RectangleShape = require('../zrender/shape/Rectangle');
     
     var ecConfig = require('../config');
     // 网格
@@ -27,7 +27,7 @@ define(function (require, exports, module) {
         borderColor: '#ccc'
     };
 
-    var zrUtil = require('zrender/tool/util');
+    var zrUtil = require('../zrender/tool/util');
 
     /**
      * 构造函数

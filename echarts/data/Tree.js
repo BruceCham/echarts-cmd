@@ -6,7 +6,7 @@
  */
 define(function(require, exports, module) {
 
-    var zrUtil = require('zrender/tool/util');
+    var zrUtil = require('../zrender/tool/util');
 
     /**
      * @constructor module:echarts/data/Tree~TreeNode

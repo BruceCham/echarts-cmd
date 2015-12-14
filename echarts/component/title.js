@@ -9,8 +9,8 @@ define(function (require, exports, module) {
     var Base = require('./base');
     
     // 图形依赖
-    var TextShape = require('zrender/shape/Text');
-    var RectangleShape = require('zrender/shape/Rectangle');
+    var TextShape = require('../zrender/shape/Text');
+    var RectangleShape = require('../zrender/shape/Rectangle');
     
     var ecConfig = require('../config');
     // 图表标题
@@ -47,9 +47,9 @@ define(function (require, exports, module) {
         }
     };
     
-    var zrUtil = require('zrender/tool/util');
-    var zrArea = require('zrender/tool/area');
-    var zrColor = require('zrender/tool/color');
+    var zrUtil = require('../zrender/tool/util');
+    var zrArea = require('../zrender/tool/area');
+    var zrColor = require('../zrender/tool/color');
     
     /**
      * 构造函数

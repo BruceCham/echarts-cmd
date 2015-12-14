@@ -11,7 +11,7 @@ define(function (require, exports, module) {
     var eventRiverLayout = require('../layout/eventRiver');
 
     // 图形依赖
-    var PolygonShape = require('zrender/shape/Polygon');
+    var PolygonShape = require('../zrender/shape/Polygon');
 
     // 组件依赖
     require('../component/axis');
@@ -50,8 +50,8 @@ define(function (require, exports, module) {
     
     var ecData = require('../util/ecData');
     var ecDate = require('../util/date');
-    var zrUtil = require('zrender/tool/util');
-    var zrColor = require('zrender/tool/color');
+    var zrUtil = require('../zrender/tool/util');
+    var zrColor = require('../zrender/tool/color');
 
     /**
      * 构造函数

@@ -59,7 +59,7 @@ define(function (require, exports, module) {
     };
 
     var ecData = require('../util/ecData');
-    var zrUtil = require('zrender/tool/util');
+    var zrUtil = require('../zrender/tool/util');
     
     /**
      * 构造函数

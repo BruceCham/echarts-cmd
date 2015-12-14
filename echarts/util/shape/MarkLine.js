@@ -20,17 +20,17 @@
  * @property {Array.<number>} symbolRotate
  */
 define(function (require, exports, module) {
-    var Base = require('zrender/shape/Base');
+    var Base = require('../../zrender/shape/Base');
     var IconShape = require('./Icon');
-    var LineShape = require('zrender/shape/Line');
+    var LineShape = require('../../zrender/shape/Line');
     var lineInstance = new LineShape({});
-    var CurveShape = require('zrender/shape/BezierCurve');
+    var CurveShape = require('../../zrender/shape/BezierCurve');
     var curveInstance = new CurveShape({});
 
-    var area = require('zrender/tool/area');
-    var dashedLineTo = require('zrender/shape/util/dashedLineTo');
-    var zrUtil = require('zrender/tool/util');
-    var curveTool = require('zrender/tool/curve');
+    var area = require('../../zrender/tool/area');
+    var dashedLineTo = require('../../zrender/shape/util/dashedLineTo');
+    var zrUtil = require('../../zrender/tool/util');
+    var curveTool = require('../../zrender/tool/curve');
 
     function MarkLine(options) {
         Base.call(this, options);

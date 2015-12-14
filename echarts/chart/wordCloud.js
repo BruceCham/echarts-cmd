@@ -6,15 +6,15 @@
 define(function (require, exports, module) {
     var ChartBase = require('./base');
 
-    var TextShape = require('zrender/shape/Text');
+    var TextShape = require('../zrender/shape/Text');
     var CloudLayout = require('../layout/WordCloud');
 
     require('../component/grid');
     require('../component/dataRange');
     var ecConfig = require('../config');
     var ecData = require('../util/ecData');
-    var zrUtil = require('zrender/tool/util');
-    var zrColor = require('zrender/tool/color');
+    var zrUtil = require('../zrender/tool/util');
+    var zrColor = require('../zrender/tool/color');
 
     ecConfig.wordCloud = {
         zlevel: 0,

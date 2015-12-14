@@ -54,8 +54,8 @@ define(function (require, exports, module) {
         }
     };
 
-    var zrUtil = require('zrender/tool/util');
-    var zrColor = require('zrender/tool/color');
+    var zrUtil = require('../zrender/tool/util');
+    var zrColor = require('../zrender/tool/color');
     
     /**
      * 构造函数

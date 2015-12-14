@@ -9,7 +9,7 @@ define(function (require, exports, module) {
     var ChartBase = require('./base');
     
     // 图形依赖
-    var PolylineShape = require('zrender/shape/Polyline');
+    var PolylineShape = require('../zrender/shape/Polyline');
     var IconShape = require('../util/shape/Icon');
     var HalfSmoothPolygonShape = require('../util/shape/HalfSmoothPolygon');
     // 组件依赖
@@ -67,8 +67,8 @@ define(function (require, exports, module) {
     };
 
     var ecData = require('../util/ecData');
-    var zrUtil = require('zrender/tool/util');
-    var zrColor = require('zrender/tool/color');
+    var zrUtil = require('../zrender/tool/util');
+    var zrColor = require('../zrender/tool/color');
     
     /**
      * 构造函数

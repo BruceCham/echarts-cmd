@@ -14,9 +14,9 @@ define(function (require, exports, module) {
     var ForceLayout = require('../layout/Force');
     
     // 图形依赖
-    var LineShape = require('zrender/shape/Line');
-    var BezierCurveShape = require('zrender/shape/BezierCurve');
-    var ImageShape = require('zrender/shape/Image');
+    var LineShape = require('../zrender/shape/Line');
+    var BezierCurveShape = require('../zrender/shape/BezierCurve');
+    var ImageShape = require('../zrender/shape/Image');
     var IconShape = require('../util/shape/Icon');
 
     var ecConfig = require('../config');
@@ -131,9 +131,9 @@ define(function (require, exports, module) {
     };
     
     var ecData = require('../util/ecData');
-    var zrUtil = require('zrender/tool/util');
-    var zrConfig = require('zrender/config');
-    var vec2 = require('zrender/tool/vector');
+    var zrUtil = require('../zrender/tool/util');
+    var zrConfig = require('../zrender/config');
+    var vec2 = require('../zrender/tool/vector');
 
     /**
      * 构造函数

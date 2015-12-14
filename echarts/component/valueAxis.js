@@ -9,9 +9,9 @@ define(function (require, exports, module) {
     var Base = require('./base');
 
     // 图形依赖
-    var TextShape = require('zrender/shape/Text');
-    var LineShape = require('zrender/shape/Line');
-    var RectangleShape = require('zrender/shape/Rectangle');
+    var TextShape = require('../zrender/shape/Text');
+    var LineShape = require('../zrender/shape/Line');
+    var RectangleShape = require('../zrender/shape/Rectangle');
 
     var ecConfig = require('../config');
     // 数值型坐标轴默认参数
@@ -73,7 +73,7 @@ define(function (require, exports, module) {
     };
 
     var ecDate = require('../util/date');
-    var zrUtil = require('zrender/tool/util');
+    var zrUtil = require('../zrender/tool/util');
 
     /**
      * 构造函数

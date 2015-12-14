@@ -1,56 +1,16 @@
-define('echarts', ['echarts/echarts'], function (require, exports, module) {
-    var main = require('echarts/echarts');
-    return main;
-});
-define('zrender', ['zrender/zrender'], function (require, exports, module) {
-    var main = require('zrender/zrender');
-    return main;
-});
-define('echarts/echarts', [
-    './config',
-    'zrender/tool/util',
-    'zrender/tool/event',
-    'zrender/tool/env',
-    'zrender',
-    'zrender/config',
-    './chart/island',
-    './component/toolbox',
-    './component',
-    './component/title',
-    './component/tooltip',
-    './component/legend',
-    './component/grid',
-    './component/dataRange',
-    './component/roamController',
-    './component/dataZoom',
-    './component/axis',
-    './component/polar',
-    './util/ecData',
-    './chart',
-    'zrender/tool/color',
-    './component/timeline',
-    'zrender/shape/Image',
-    'zrender/loadingEffect/Bar',
-    'zrender/loadingEffect/Bubble',
-    'zrender/loadingEffect/DynamicLine',
-    'zrender/loadingEffect/Ring',
-    'zrender/loadingEffect/Spin',
-    'zrender/loadingEffect/Whirling',
-    './theme/macarons',
-    './theme/infographic'
-], function (require, exports, module) {
+define(function (require, exports, module) {
     var ecConfig = require('./config');
-    var zrUtil = require('zrender/tool/util');
-    var zrEvent = require('zrender/tool/event');
+    var zrUtil = require('./zrender/tool/util');
+    var zrEvent = require('./zrender/tool/event');
     var self = {};
-    var _canvasSupported = require('zrender/tool/env').canvasSupported;
+    var _canvasSupported = require('./zrender/tool/env').canvasSupported;
     var _idBase = new Date() - 0;
     var _instances = {};
     var DOM_ATTRIBUTE_KEY = '_echarts_instance_';
     self.version = '2.2.7';
     self.dependencies = { zrender: '2.1.1' };
     self.init = function (dom, theme) {
-        var zrender = require('zrender');
+        var zrender = require('./zrender/zrender');
         if (zrender.version.replace('.', '') - 0 < self.dependencies.zrender.replace('.', '') - 0) {
             console.error('ZRender ' + zrender.version + ' is too old for ECharts ' + self.version + '. Current version need ZRender ' + self.dependencies.zrender + '+');
         }
@@ -93,7 +53,7 @@ define('echarts/echarts', [
         this.resize = this.resize();
         this._init();
     }
-    var ZR_EVENT = require('zrender/config').EVENT;
+    var ZR_EVENT = require('./zrender/config').EVENT;
     var ZR_EVENT_LISTENS = [
         'CLICK',
         'DBLCLICK',
@@ -119,7 +79,7 @@ define('echarts/echarts', [
     Echarts.prototype = {
         _init: function () {
             var self = this;
-            var _zr = require('zrender').init(this.dom);
+            var _zr = require('./zrender/zrender').init(this.dom);
             this._zr = _zr;
             this._messageCenter.dispatch = function (type, event, eventPackage, that) {
                 eventPackage = eventPackage || {};
@@ -594,7 +554,7 @@ define('echarts/echarts', [
                 themeColor = this._themeConfig.color || ecConfig.color;
             }
             this._zr.getColor = function (idx) {
-                var zrColor = require('zrender/tool/color');
+                var zrColor = require('./zrender/tool/color');
                 return zrColor.getColor(idx, themeColor);
             };
             if (!_canvasSupported) {
@@ -917,8 +877,8 @@ define('echarts/echarts', [
             zrDom.style.width = maxRight - minLeft + 'px';
             zrDom.style.height = maxBottom - minTop + 'px';
             document.body.appendChild(zrDom);
-            var zrImg = require('zrender').init(zrDom);
-            var ImageShape = require('zrender/shape/Image');
+            var zrImg = require('./zrender/zrender').init(zrDom);
+            var ImageShape = require('./zrender/shape/Image');
             for (var c in imgList) {
                 zrImg.addShape(new ImageShape({
                     style: {
@@ -999,12 +959,12 @@ define('echarts/echarts', [
         },
         showLoading: function (loadingOption) {
             var effectList = {
-                bar: require('zrender/loadingEffect/Bar'),
-                bubble: require('zrender/loadingEffect/Bubble'),
-                dynamicLine: require('zrender/loadingEffect/DynamicLine'),
-                ring: require('zrender/loadingEffect/Ring'),
-                spin: require('zrender/loadingEffect/Spin'),
-                whirling: require('zrender/loadingEffect/Whirling')
+                bar: require('./zrender/loadingEffect/Bar'),
+                bubble: require('./zrender/loadingEffect/Bubble'),
+                dynamicLine: require('./zrender/loadingEffect/DynamicLine'),
+                ring: require('./zrender/loadingEffect/Ring'),
+                spin: require('./zrender/loadingEffect/Spin'),
+                whirling: require('./zrender/loadingEffect/Whirling')
             };
             this._toolbox.hideDataView();
             loadingOption = loadingOption || {};
